@@ -8,12 +8,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
+import { ArticleCreateComponent } from './article-create/article-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    ArticleCreateComponent
   ],
   imports: [
     BrowserModule,
