@@ -4,7 +4,7 @@ import { ArticleCreateComponent } from './article-create/article-create.componen
 import { DashboardComponent }   from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'article/create', component: ArticleCreateComponent },
+  //{ path: 'article/create', component: ArticleCreateComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];

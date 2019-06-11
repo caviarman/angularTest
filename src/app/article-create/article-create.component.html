@@ -1,3 +1,9 @@
-<p>
-  article-create works!
-</p>
+<div class="container">
+  <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="editor">Editor</label>
+      <quill-editor formControlName="editor"></quill-editor>
+    </div>
+<button type="submit">Add</button>
+  </form>
+</div>

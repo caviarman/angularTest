@@ -27,17 +27,8 @@
 </nav>
 
 <app-articles></app-articles>
-
-<div class="container">
-  <form [formGroup]="editorForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="editor">Editor</label>
-      <quill-editor formControlName="editor"></quill-editor>
-    </div>
-<button type="submit">Submit</button>
-  </form>
-</div>
-
+<app-article-create></app-article-create>
+<router-outlet></router-outlet>
 <!-- /.container -->
 
 <!-- Footer -->

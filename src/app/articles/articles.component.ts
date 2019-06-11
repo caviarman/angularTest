@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class ArticlesComponent implements OnInit {
 
+  example: string;
   constructor(
     private api: ApiService
   ) { }
@@ -15,6 +16,7 @@ export class ArticlesComponent implements OnInit {
   ngOnInit() {
     this.api.getSome().subscribe((res) => {
       console.log('res', res);
+      this.example = res.data.text;
     });
   }
   
