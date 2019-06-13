@@ -17,7 +17,9 @@ export class ArticleCreateComponent implements OnInit {
 
   ngOnInit() {
     this.editorForm = new FormGroup({
-      'editor': new FormControl(null)
+      'title': new FormControl(null),
+      'epigraph': new FormControl(null),
+      'text': new FormControl(null)
     })  
   }
 
@@ -25,9 +27,9 @@ export class ArticleCreateComponent implements OnInit {
     console.log('1111', this.editorForm.value.editor);
     this.api.createArticle({
       author: 'Olga Ilina',
-      title: 'Test',
+      title: this.editorForm.value.title,
       epigraph: 'Epigraph',
-      text: this.editorForm.value.editor  
+      text: this.editorForm.value.text  
     }).subscribe(res =>{
       console.log('res', res);
     });
