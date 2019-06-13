@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
@@ -13,7 +12,6 @@ import { ArticleCreateComponent } from './article-create/article-create.componen
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     ArticlesComponent,
     ArticleCreateComponent
   ],
