@@ -11,41 +11,16 @@
         </p>
         <hr>
         <!-- Date/Time -->
-      <p>Опубликовано on {{article.createdOn | date }}</p>  
+      <p>Опубликовано {{article.createdOn | date }}</p>  
       
       <hr>
-      <img class="img-fluid rounded" src="../assets/img/современный_ритм.EUbe5.jpg" alt="">
-      <hr>
+      <img class="img-fluid rounded" src="../assets/img/{{article.id}}.jpg" alt="">
       <!-- Post Content -->
-      <div class="text-right" [innerHTML]="article.epigraph"></div>
-      <div [innerHTML]="article.text"></div>
+      <div class="text-right" [innerHTML]="article.epigraph" style="margin-top: 10px;"></div>
+      <div style="margin-top: 10;" [innerHTML]="article.text"></div>
       <hr>
     </div>
-      <!-- Title -->
-      <h1 class="mt-4">Современный ритм жизни: в чем опасность для детей?</h1>
-      <!-- Author -->
-      <p class="lead">
-        by
-        <a href="#">Olga Ilina</a>
-      </p>
-
-      <hr>
-
-      <!-- Date/Time -->
-      <p>Опубликовано on January 1, 2019 at 12:00 PM</p>
-
-      <hr>
-
-      <!-- Preview Image -->
-      <img class="img-fluid rounded" src="../assets/img/современный_ритм.EUbe5.jpg" alt="">
-
-      <hr>
-
-      <!-- Post Content -->
-     <div class="text-right" [innerHTML]="epigraph"></div>
-     <div [innerHTML]="example"></div>
-      <hr>
-      <!-- Comments Form -->
+      Comments Form
       <div class="card my-4">
         <h5 class="card-header">Комментарии:</h5>
         <div class="card-body">
@@ -147,116 +122,7 @@
           You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
         </div>
       </div>
-
     </div>
-
   </div>
-  <!-- /.row -->
-
 </div>
-
-
-
-<div class="container" style="margin-top: 70px;">
-
-  <div class="row">
-
-    <!-- Post Content Column -->
-    <div class="col-lg-8">
-
-      <!-- Title -->
-      <h1 class="mt-4">«Мама, ты всегда будешь любить меня?» - что значит безусловная любовь</h1>
-
-      <!-- Author -->
-      <p class="lead">
-        by
-        <a href="#">Olga Ilina</a>
-      </p>
-
-      <hr>
-
-      <!-- Date/Time -->
-      <p>Опубликовано on January 1, 2019 at 12:00 PM</p>
-
-      <hr>
-
-      <!-- Preview Image -->
-      <img class="img-fluid rounded" src="../assets/img/картинка (мама, ты всегда будешь меня любить).jpg" alt="">
-
-      <hr>
-
-      <!-- Post Content -->
-      <p class="text-right font-italic">«Материнство - это большое искусство, и ему необходимо учиться»</p>
-      <p class="text-right font-italic">Ошо</p>
-      <p class="lead">Знакомо ли Вам, когда малыш после того, как Вы его поругали, накричали подбегает и задаёт вопрос: 
-        <span class="font-italic">«Мама, а ты меня любишь?»</span> 
-        Или в семьях, где двое и больше детей можно часто услышать 
-        <span class="font-italic">«Ты любишь брата больше, чем меня. Ты вчера с ним весь вечер провела!»</span>.
-      </p>
-      <p>Потребность в любви, нужности другому, одна из фундаментальных человеческих потребностей. И она удовлетворяется тогда, когда ребёнок получает безусловную материнскую любовь. </p>
-      <p><span class="font-italic font-weight-bold">«Безусловно принимать ребёнка – значит любить его просто так, просто за то, что он есть»</span> - пишет Ю.Б.Гиппенрейтер – педагог и психолог  в своей книге «Общаться с ребёнком. Как?»</p>
-      <p>В раннем детстве закладываются основы отношения ребёнка к себе, другим людям, окружающей действительности. Будет ли он верить в себя, доверять другим, проявлять интерес и активность к миру, во многом определяется опытом взаимодействия с родителями. В первую очередь, с мамой. </p>
-      <p class="font-italic">«Если ты будешь хорошим мальчиком, то я буду тебя любить»</p>
-      <p class="font-italic">«Не жди от меня хорошего, пока ты не перестанешь лениться»</p>
-      <p class="font-italic">«Даже не подходи ко мне, пока нормально не станешь себя вести»</p>
-      <p class="font-italic">«Мне такая дочь не нужна»…</p>
-      <p>Такие фразы являются примером условного отношения к ребёнку, что его любят или будут любить «только если..». Ты сам не важен, важно только то, что ты делаешь, твоя функциональность.</p>
-      <p>Дело в том, что наша идеологическая и педагогическая система на протяжении десятилетий убеждала нас в том, что ребёнка надо любить тогда, когда он делает что-то правильное, хорошо ведёт себя, помогает и т.д. Как будто награда и наказание, метод «кнута и пряника» – главные воспитательные средства. Но человек устроен гораздо сложнее, чем кошка или собака. </p>
-      <p class="font-weight-bold">Знаки безусловного принятия нужны, как пища для растущего организма</p>
-      <p>Кода Вы сообщаете ребенку, что он Вам дорог, нужен, важен: <span class="font-italic">«Я рада, что ты есть», «как  хорошо, что ты родился», «мне хорошо, когда мы вместе».</span> Такие фразы питают его эмоционально, помогая психологически развиваться. Если же он не получает таких знаков, то появляются эмоциональные проблемы, отклонения в поведении, нервно-психические заболевания.</p> 
-      <p>В психологии есть понятие <span class="font-weight-bold">«материнская депривация» (от лат. deprivatio — потеря, лишение)</span> — процесс эмоционального и психологического обеднения ребёнка, вследствие отрыва ребёнка от матери в раннем возрасте. В основе этого феномена лежит полное или частичное отсутствие у ребёнка привязанности к взрослым, подрыв доверия ко взрослому миру. </p>         
-      <p><span class="font-weight-bold">Эрик Эриксон</span> (немецкий психолог) ввел термин <span class="font-weight-bold">«базисное недоверие к миру» </span>у детей, лишенных внимания матери.  </p>
-      <p>Бывает, наоборот, материнская любовь столь сильна, что не дает ребенку развиваться и психологически отделяться от родителей. <i>«Я живу ради ребенка», «я сделаю всё, чтобы мой ребенок ни в чем не нуждался» </i>и т.д. Чрезмерная забота и поддержка, желание оградить ребенка от трудностей и неприятностей блокирует психологический рост ребенка. Создание детям «стерильных», «оранжерейных» условий приводит к незрелости личности и социальной дезадаптации. </p> 
-      <p class="font-weight-bold">Что мешает просто любить?</p>
-      <p>Любить безусловно ребёнка так просто и так сложно. И в этом часто мешает  отсутствие у нас как у родителей опыта безусловной любви в ту пору, когда мы были сами детьми.</p>
-      <p>Любить безусловно бывает не просто из-за наши собственных родительских чувства. Мы часто тревожимся за детей. <span class="font-italic">«На улице опасно, пусть дома сидит». </span>Нам бывает стыдно за своих детей, особенно в ситуациях, когда ребёнок капризничает, обзывается или дерётся. <span class="font-italic">«Что подумают другие? Что скажут?».</span> Ещё наши страх и вина. </p>
-      <p>Чтобы любить безусловно ребёнка нужно осознать, разобраться со своими чувствами, научиться любить себя такими, какие есть. Любить ребёнка значит: доверять ему, верить в его мудрость, признавать в нём личность, позволять совершать ошибки, быть честным с ним.</p>
-      <p>Пусть Ваша материнская любовь помогает, а не разрушает. Делает Ваших детей здоровыми, сильными и успешными. Обогащает Ваши отношения и ведёт к простому человеческому счастью. Когда Вы счастливы от того, что просто уже есть друг у друга.</p>
-      <hr>
-      <!-- Comments Form -->
-      <div class="card my-4">
-        <h5 class="card-header">Комментарии:</h5>
-        <div class="card-body">
-          <form>
-            <div class="form-group">
-              <textarea class="form-control" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Подтвердить</button>
-          </form>
-        </div>
-      </div>
-      <!-- Single Comment -->
-      <div class="media mb-4">
-        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-        <div class="media-body">
-          <h5 class="mt-0">Имя комментирующего</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-        </div>
-      </div>
-      <!-- Comment with nested comments -->
-      <div class="media mb-4">
-        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-        <div class="media-body">
-          <h5 class="mt-0">Имя комментирующего</h5>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-          <div class="media mt-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Имя комментирующего</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-          <div class="media mt-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Имя комментирующего</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-</div>
-
 <router-outlet></router-outlet>
