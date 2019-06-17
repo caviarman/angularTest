@@ -8,15 +8,19 @@ import { ApiService } from '../api.service';
 })
 export class ArticlesComponent implements OnInit {
 
+  articles: Array<any>;
   example: string;
   constructor(
     private api: ApiService
   ) { }
 
   ngOnInit() {
-    this.api.getSome().subscribe((res) => {
+    this.api.getArticles().subscribe((res) => {
       console.log('res', res);
-      this.example = res.data.text;
+      if (!!res.data) {
+        this.articles = res.data;
+      }
+      this.example = res.data[2].text;
     });
   }
   

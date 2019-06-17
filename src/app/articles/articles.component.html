@@ -1,6 +1,26 @@
 <div class="container" style="margin-top: 70px;">
   <div class="row">
     <div class="col-lg-8">
+      <div class="container" *ngFor="let article of articles">
+        <!-- Title -->
+        <h1 class="mt-4">{{article.title}}</h1>
+        <!-- Author -->
+        <p class="lead">
+          by
+          <a href="#">{{article.author}}</a>
+        </p>
+        <hr>
+        <!-- Date/Time -->
+      <p>Опубликовано on {{article.createdOn | date }}</p>  
+      
+      <hr>
+      <img class="img-fluid rounded" src="../assets/img/современный_ритм.EUbe5.jpg" alt="">
+      <hr>
+      <!-- Post Content -->
+      <div class="text-right" [innerHTML]="article.epigraph"></div>
+      <div [innerHTML]="article.text"></div>
+      <hr>
+    </div>
       <!-- Title -->
       <h1 class="mt-4">Современный ритм жизни: в чем опасность для детей?</h1>
       <!-- Author -->

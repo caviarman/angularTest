@@ -28,7 +28,7 @@ export class ArticleCreateComponent implements OnInit {
     this.api.createArticle({
       author: 'Olga Ilina',
       title: this.editorForm.value.title,
-      epigraph: 'Epigraph',
+      epigraph: this.editorForm.value.epigraph,
       text: this.editorForm.value.text  
     }).subscribe(res =>{
       console.log('res', res);
