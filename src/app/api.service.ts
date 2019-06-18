@@ -13,6 +13,9 @@ export class ApiService {
   getArticles(): Observable<any> {
     return this.httpClient.get<any>(`${this.apiURL}/getArticles`);
   }
+  getArticle(id): Observable<any> {
+    return this.httpClient.get<any>(`${this.apiURL}/article/${id}`);
+  }
   createArticle(data): Observable<any> {
     return this.httpClient.post<any>(`${this.apiURL}/article/create`, JSON.stringify(data));
   }

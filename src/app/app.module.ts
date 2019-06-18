@@ -8,12 +8,14 @@ import { ArticlesComponent } from './articles/articles.component';
 import { HttpClientModule } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
 import { ArticleCreateComponent } from './article-create/article-create.component';
+import { AdminArticlesComponent } from './admin-articles/admin-articles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticlesComponent,
-    ArticleCreateComponent
+    ArticleCreateComponent,
+    AdminArticlesComponent
   ],
   imports: [
     BrowserModule,

@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 
 @Component({
-  selector: 'app-articles',
-  templateUrl: './articles.component.html',
-  styleUrls: ['./articles.component.scss']
+  selector: 'app-admin-articles',
+  templateUrl: './admin-articles.component.html',
+  styleUrls: ['./admin-articles.component.scss']
 })
-export class ArticlesComponent implements OnInit {
-
+export class AdminArticlesComponent implements OnInit {
+  
   articles: Array<any>;
   constructor(
     private api: ApiService
@@ -21,5 +21,5 @@ export class ArticlesComponent implements OnInit {
       }
     });
   }
-  
+
 }

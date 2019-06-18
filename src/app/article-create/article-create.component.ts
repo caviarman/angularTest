@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiService } from '../api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article-create',
@@ -10,7 +11,9 @@ import { ApiService } from '../api.service';
 export class ArticleCreateComponent implements OnInit {
 
   constructor(
-    private api: ApiService
+    private api: ApiService,
+    private route: ActivatedRoute
+
   ) { }
   
   editorForm: FormGroup;
@@ -20,7 +23,22 @@ export class ArticleCreateComponent implements OnInit {
       'title': new FormControl(null),
       'epigraph': new FormControl(null),
       'text': new FormControl(null)
-    })  
+    })
+  
+    this.route.params.subscribe(item => {
+      if (!!item.id) {
+        this.api.getArticle(item.id).subscribe(res => {
+          if (!!res.data) {
+            this.editorForm.setValue({
+              'title': res.data.title,
+              'epigraph': res.data.epigraph,
+              'text': res.data.text
+            });
+          }
+        });
+      }
+    });
+      
   }
 
   onSubmit() {
