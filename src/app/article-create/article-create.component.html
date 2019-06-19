@@ -13,7 +13,8 @@
           <quill-editor formControlName="text"></quill-editor>
       </div>
    
-    <button type="submit" class="btn btn-primary" >Add</button>
+    <button *ngIf="!editMode" type="submit" class="btn btn-primary" >Add</button>
+    <button *ngIf="editMode" type="button" class="btn btn-primary" (click)="updateArticle()">Update</button>
   </form>
 </div>
 <router-outlet></router-outlet>

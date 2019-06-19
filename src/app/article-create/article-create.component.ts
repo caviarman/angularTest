@@ -10,13 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ArticleCreateComponent implements OnInit {
 
+  editMode: boolean = false;
+  id: number = 0;
+  editorForm: FormGroup;
+
   constructor(
     private api: ApiService,
     private route: ActivatedRoute
 
   ) { }
-  
-  editorForm: FormGroup;
 
   ngOnInit() {
     this.editorForm = new FormGroup({
@@ -27,6 +29,8 @@ export class ArticleCreateComponent implements OnInit {
   
     this.route.params.subscribe(item => {
       if (!!item.id) {
+        this.id = item.id;
+        this.editMode = true;
         this.api.getArticle(item.id).subscribe(res => {
           if (!!res.data) {
             this.editorForm.setValue({
@@ -51,6 +55,17 @@ export class ArticleCreateComponent implements OnInit {
     }).subscribe(res =>{
       console.log('res', res);
     });
+  }
+
+  updateArticle() {
+    this.api.updateArticle(this.id, {
+      author: 'Olga Ilina',
+      title: this.editorForm.value.title,
+      epigraph: this.editorForm.value.epigraph,
+      text: this.editorForm.value.text
+    }).subscribe(res => {
+      console.log('update', res);
+    });    
   }
 
 }
