@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) { }
   getArticles(): Observable<any> {
-    return this.httpClient.get<any>(`${this.apiURL}/getArticles`);
+    return this.httpClient.get<any>(`${this.apiURL}/articles`);
   }
   getArticle(id): Observable<any> {
     return this.httpClient.get<any>(`${this.apiURL}/article/${id}`);
@@ -20,7 +20,7 @@ export class ApiService {
     return this.httpClient.put<any>(`${this.apiURL}/article/${id}`, JSON.stringify(data));
   }
   createArticle(data): Observable<any> {
-    return this.httpClient.post<any>(`${this.apiURL}/article/create`, JSON.stringify(data));
+    return this.httpClient.post<any>(`${this.apiURL}/article`, JSON.stringify(data));
   }
   
 }
