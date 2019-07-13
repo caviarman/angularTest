@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { AdminArticlesComponent } from './admin-articles/admin-articles.component';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
-  { path: 'article/create', component: ArticleCreateComponent },
+  { path: 'admin/article/create', component: ArticleCreateComponent },
   { path: 'articles', component: AdminArticlesComponent },
-  { path: 'article/:id', component: ArticleCreateComponent},
+  { path: 'admin/article/:id', component: ArticleCreateComponent},
+  { path: 'article/:id', component: ArticleComponent},
   { path: 'dashboard', component: ArticlesComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];

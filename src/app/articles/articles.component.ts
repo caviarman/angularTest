@@ -18,6 +18,10 @@ export class ArticlesComponent implements OnInit {
       console.log('res', res);
       if (!!res.data) {
         this.articles = res.data;
+        this.articles = this.articles.map(item => {
+          item.text = `${item.text}<a href="article/${item.id}">...далее</a>`;
+          return item;
+        });
       }
     });
   }
