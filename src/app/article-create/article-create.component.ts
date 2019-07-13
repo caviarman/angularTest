@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiService } from '../api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-article-create',
@@ -16,7 +16,8 @@ export class ArticleCreateComponent implements OnInit {
 
   constructor(
     private api: ApiService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
 
   ) { }
 
@@ -54,6 +55,7 @@ export class ArticleCreateComponent implements OnInit {
       text: this.editorForm.value.text  
     }).subscribe(res =>{
       console.log('res', res);
+      this.router.navigateByUrl('/admin/articles');
     });
   }
 

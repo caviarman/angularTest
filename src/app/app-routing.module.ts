@@ -7,8 +7,8 @@ import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
   { path: 'admin/article/create', component: ArticleCreateComponent },
-  { path: 'articles', component: AdminArticlesComponent },
-  { path: 'admin/article/:id', component: ArticleCreateComponent},
+  { path: 'admin/articles', component: AdminArticlesComponent },
+  { path: 'admin/articles/:id', component: ArticleCreateComponent},
   { path: 'article/:id', component: ArticleComponent},
   { path: 'dashboard', component: ArticlesComponent },
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' }

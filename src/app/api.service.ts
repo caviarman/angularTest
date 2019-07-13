@@ -22,5 +22,8 @@ export class ApiService {
   createArticle(data): Observable<any> {
     return this.httpClient.post<any>(`${this.apiURL}/article`, JSON.stringify(data));
   }
+  deleteArticle(id): Observable<any> {
+    return this.httpClient.delete<any>(`${this.apiURL}/article/${id}`);
+  }
   
 }

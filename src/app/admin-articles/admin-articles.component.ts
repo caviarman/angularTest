@@ -14,12 +14,18 @@ export class AdminArticlesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.api.getArticles().subscribe((res) => {
+    this.api.getArticles().subscribe(res => {
       console.log('res', res);
       if (!!res.data) {
         this.articles = res.data;
       }
     });
   }
-
+  deleteArticle(id) {
+    this.api.deleteArticle(id).subscribe(res => {
+      if (res.status) {
+        this.articles = this.articles.filter(item => item.id !== id);
+      }
+    });
+  }
 }
