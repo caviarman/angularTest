@@ -10,6 +10,7 @@ import { QuillModule } from 'ngx-quill';
 import { ArticleCreateComponent } from './article-create/article-create.component';
 import { AdminArticlesComponent } from './admin-articles/admin-articles.component';
 import { ArticleComponent } from './article/article.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ArticleComponent } from './article/article.component';
     ArticlesComponent,
     ArticleCreateComponent,
     AdminArticlesComponent,
-    ArticleComponent
+    ArticleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
