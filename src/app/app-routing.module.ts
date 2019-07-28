@@ -5,6 +5,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { AdminArticlesComponent } from './admin-articles/admin-articles.component';
 import { ArticleComponent } from './article/article.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   { path: 'admin/article/create', component: ArticleCreateComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'article/:id', component: ArticleComponent},
   { path: 'dashboard', component: ArticlesComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent},
 
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 ];

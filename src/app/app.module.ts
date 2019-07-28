@@ -11,6 +11,7 @@ import { ArticleCreateComponent } from './article-create/article-create.componen
 import { AdminArticlesComponent } from './admin-articles/admin-articles.component';
 import { ArticleComponent } from './article/article.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     ArticleCreateComponent,
     AdminArticlesComponent,
     ArticleComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
