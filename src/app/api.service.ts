@@ -28,5 +28,8 @@ export class ApiService {
   register(user): Observable<any> {
     return this.httpClient.post<any>(`${this.apiURL}/register`, JSON.stringify(user))
   }
+  login(user): Observable<any> {
+    return this.httpClient.post<any>(`${this.apiURL}/login`, JSON.stringify(user))
+  }
   
 }
