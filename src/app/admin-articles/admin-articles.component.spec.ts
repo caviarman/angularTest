@@ -19,5 +19,5 @@ describe('AdminArticlesComponent', () => {
     fixture.detectChanges();
   });
 
-  
+
 });

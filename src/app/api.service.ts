@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  apiURL: string = 'http://localhost:8080';
+  apiURL = 'http://84.201.169.237:8080';
 
   constructor(private httpClient: HttpClient) { }
   getArticles(): Observable<any> {
@@ -26,10 +26,9 @@ export class ApiService {
     return this.httpClient.delete<any>(`${this.apiURL}/article/${id}`);
   }
   register(user): Observable<any> {
-    return this.httpClient.post<any>(`${this.apiURL}/register`, JSON.stringify(user))
+    return this.httpClient.post<any>(`${this.apiURL}/register`, JSON.stringify(user));
   }
   login(user): Observable<any> {
-    return this.httpClient.post<any>(`${this.apiURL}/login`, JSON.stringify(user))
+    return this.httpClient.post<any>(`${this.apiURL}/login`, JSON.stringify(user));
   }
-  
 }

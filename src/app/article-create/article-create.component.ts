@@ -10,8 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ArticleCreateComponent implements OnInit {
 
-  editMode: boolean = false;
-  id: number = 0;
+  editMode = false;
+  id = 0;
   editorForm: FormGroup;
 
   constructor(
@@ -23,11 +23,11 @@ export class ArticleCreateComponent implements OnInit {
 
   ngOnInit() {
     this.editorForm = new FormGroup({
-      'title': new FormControl(null),
-      'epigraph': new FormControl(null),
-      'text': new FormControl(null)
-    })
-  
+      title: new FormControl(null),
+      epigraph: new FormControl(null),
+      text: new FormControl(null)
+    });
+
     this.route.params.subscribe(item => {
       if (!!item.id) {
         this.id = item.id;
@@ -35,26 +35,24 @@ export class ArticleCreateComponent implements OnInit {
         this.api.getArticle(item.id).subscribe(res => {
           if (!!res.data) {
             this.editorForm.setValue({
-              'title': res.data.title,
-              'epigraph': res.data.epigraph,
-              'text': res.data.text
+              title: res.data.title,
+              epigraph: res.data.epigraph,
+              text: res.data.text
             });
           }
         });
       }
     });
-      
+
   }
 
   onSubmit() {
-    console.log('1111', this.editorForm.value.editor);
     this.api.createArticle({
       author: 'Olga Ilina',
       title: this.editorForm.value.title,
       epigraph: this.editorForm.value.epigraph,
-      text: this.editorForm.value.text  
-    }).subscribe(res =>{
-      console.log('res', res);
+      text: this.editorForm.value.text
+    }).subscribe(() => {
       this.router.navigateByUrl('/admin/articles');
     });
   }
@@ -67,7 +65,7 @@ export class ArticleCreateComponent implements OnInit {
       text: this.editorForm.value.text
     }).subscribe(res => {
       console.log('update', res);
-    });    
+    });
   }
 
 }

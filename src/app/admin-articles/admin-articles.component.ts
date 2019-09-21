@@ -7,7 +7,7 @@ import { ApiService } from '../api.service';
   styleUrls: ['./admin-articles.component.scss']
 })
 export class AdminArticlesComponent implements OnInit {
-  
+
   articles: Array<any>;
   constructor(
     private api: ApiService

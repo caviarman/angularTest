@@ -14,8 +14,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private apiService: ApiService,
-  ) { 
-    
+  ) {
   }
 
   ngOnInit() {
@@ -41,10 +40,9 @@ export class RegisterComponent implements OnInit {
         console.log('register pesponse', res);
       });
     } else {
-      console.log("Invalid Password")
+      console.log('Invalid Password');
     }
-    
-    
+
   }
 
 }
