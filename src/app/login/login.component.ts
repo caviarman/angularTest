@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private apiService: ApiService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -31,6 +33,10 @@ export class LoginComponent implements OnInit {
         password: loginData.value.password,
       }).subscribe(res => {
         console.log('login response', res);
+        if (!!res.token) {
+          localStorage.setItem('API-TOKEN', res.token);
+          this.router.navigate(['admin/articles']);
+        }
       });
   }
 

@@ -6,11 +6,12 @@ import { AdminArticlesComponent } from './admin-articles/admin-articles.componen
 import { ArticleComponent } from './article/article.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'admin/article/create', component: ArticleCreateComponent },
-  { path: 'admin/articles', component: AdminArticlesComponent },
-  { path: 'admin/articles/:id', component: ArticleCreateComponent},
+  { path: 'admin/article/create', component: ArticleCreateComponent, canActivate: [AuthGuard] },
+  { path: 'admin/articles', component: AdminArticlesComponent, canActivate: [AuthGuard] },
+  { path: 'admin/articles/:id', component: ArticleCreateComponent, canActivate: [AuthGuard]},
   { path: 'article/:id', component: ArticleComponent},
   { path: 'dashboard', component: ArticlesComponent },
   { path: 'login', component: LoginComponent },

@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  apiURL = 'http://84.201.169.237:8080';
+  apiURL = 'http://localhost:8080';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router
+    ) { }
   getArticles(): Observable<any> {
     return this.httpClient.get<any>(`${this.apiURL}/articles`);
   }
@@ -30,5 +34,9 @@ export class ApiService {
   }
   login(user): Observable<any> {
     return this.httpClient.post<any>(`${this.apiURL}/login`, JSON.stringify(user));
+  }
+  logout() {
+    localStorage.removeItem('API-TOKEN');
+    this.router.navigate(['login']);
   }
 }
