@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,10 +9,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./article-create.component.scss']
 })
 export class ArticleCreateComponent implements OnInit {
+  @ViewChild('uploadImage') uploadImage;
 
   editMode = false;
   id = 0;
   editorForm: FormGroup;
+  image;
 
   constructor(
     private api: ApiService,
@@ -51,7 +53,8 @@ export class ArticleCreateComponent implements OnInit {
       author: 'Olga Ilina',
       title: this.editorForm.value.title,
       epigraph: this.editorForm.value.epigraph,
-      text: this.editorForm.value.text
+      text: this.editorForm.value.text,
+      image: this.image
     }).subscribe(() => {
       this.router.navigateByUrl('/admin/articles');
     });
@@ -66,6 +69,16 @@ export class ArticleCreateComponent implements OnInit {
     }).subscribe(res => {
       console.log('update', res);
     });
+  }
+
+  onFileAdd() {
+    const file: File = this.uploadImage.nativeElement.files[0];
+    const fileReader: FileReader = new FileReader();
+    fileReader.onloadend = (e) => {
+      console.log('READER RESULT', fileReader.result);
+      this.image = /base64,(.+)/.exec(String(fileReader.result))[1];
+    };
+    fileReader.readAsDataURL(file);
   }
 
 }

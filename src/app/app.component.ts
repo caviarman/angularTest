@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class AppComponent implements OnInit {
-
+  constructor(
+    private apiService: ApiService
+  ) {}
 
 
   ngOnInit() {
 
+  }
 
-
+  onLogout() {
+    this.apiService.logout();
   }
 
 }

@@ -12,6 +12,10 @@
           <label for="text">Text</label>
           <quill-editor formControlName="text"></quill-editor>
       </div>
+      <div class="form-group">
+        <label for="photo">Photo</label><br>
+        <input type="file" (change)="onFileAdd()" #uploadImage id="photo">
+      </div>
    
     <button *ngIf="!editMode" type="submit" class="btn btn-primary">Add</button>
     <button *ngIf="editMode" type="button" class="btn btn-primary" (click)="updateArticle()">Update</button>
