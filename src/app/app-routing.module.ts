@@ -7,8 +7,10 @@ import { ArticleComponent } from './article/article.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth.guard';
+import { TestsComponent } from './tests/tests.component';
 
 const routes: Routes = [
+  { path: 'user/tests', component: TestsComponent, canActivate: [AuthGuard] },
   { path: 'admin/article/create', component: ArticleCreateComponent, canActivate: [AuthGuard] },
   { path: 'admin/articles', component: AdminArticlesComponent, canActivate: [AuthGuard] },
   { path: 'admin/articles/:id', component: ArticleCreateComponent, canActivate: [AuthGuard]},

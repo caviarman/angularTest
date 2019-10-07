@@ -1,0 +1,25 @@
+<div>
+  <button class="block" (click)=onClick(12)>12</button>
+  <button class="block" (click)=onClick(19)>19</button>
+  <button class="block" (click)=onClick(14)>14</button>
+</div>
+<div>
+  <button class="block" (click)=onClick(21)>21</button>
+  <button class="block" (click)=onClick(17)>17</button>
+  <button class="block" (click)=onClick(5)>5</button>
+</div>
+<div>
+  <button class="block" (click)=onClick(11)>11</button>
+  <button class="block" (click)=onClick(22)>22</button>
+  <button class="block" (click)=onClick(15)>15</button>
+</div>
+
+<div>
+  <label for="nums">Ваш ответ</label><br>
+  <span *ngFor="let num of nums" class="nums" [ngStyle]="{'color': checkAnswer(num)}" id="nums">{{num}}</span>
+</div>
+<div *ngIf="nums.length === 9">
+   <label for="answer">Правильный ответ</label><br>
+  <span *ngFor="let ans of answer" class="nums" [ngStyle]="{'color': 'green'}" id="answer">{{ans}}</span>
+</div>
+

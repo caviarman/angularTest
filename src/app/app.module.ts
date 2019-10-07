@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticlesComponent } from './articles/articles.component';
@@ -14,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './auth.guard';
 import { AuthInterceptor } from './auth.interceptor';
+import { BlockComponent } from './block/block.component';
+import { TestsComponent } from './tests/tests.component';
 
 const INTERCEPTOR_PROVIDER = {
   provide: HTTP_INTERCEPTORS,
@@ -29,7 +32,9 @@ const INTERCEPTOR_PROVIDER = {
     AdminArticlesComponent,
     ArticleComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    BlockComponent,
+    TestsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ const INTERCEPTOR_PROVIDER = {
     FormsModule,
     HttpClientModule,
     QuillModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [AuthGuard, INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
